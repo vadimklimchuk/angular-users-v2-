@@ -1,3 +1,41 @@
-<p>
-  user-detail works!
-</p>
+<div class="modal-wrap">
+  <div class="modal">
+    <h2>{{user.name}}</h2>
+    <div class="user-information">
+      <div>id: <span>{{user.id}}</span></div>
+      <div>
+        username: <span>{{user.username}}</span>
+      </div>
+      <div>
+        email: <span>{{user.email}}</span>
+      </div>
+      <div>
+        address: 
+        <p>street: <span>{{user.address.street}}</span></p>
+        <p>suite: <span>{{user.address.suite}}</span></p>
+        <p>city: <span>{{user.address.city}}</span></p>
+        <p>zipcode: <span>{{user.address.zipcode}}</span></p>
+        <p>geo: 
+          <p class="geo">lat: <span>{{user.address.geo.lat}}</span></p>
+          <p class="geo">lng: <span>{{user.address.geo.lng}}</span></p>
+      </div>
+      <div>
+        phone: <span>{{user.phone}}</span>
+      </div>
+      <div>
+        website: <span>{{user.website}}</span>
+      </div>
+      <div>
+        company: 
+        <p>name: <span>{{user.company.name}}</span></p>
+        <p>catchPhrase: <span>{{user.company.catchPhrase}}</span></p>
+        <p>bs: <span>{{user.company.bs}}</span></p>
+      </div>
+    </div>
+  
+    <div (click)="cancel()" class="close"></div>
+  </div>
+</div>
+
+
+

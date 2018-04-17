@@ -18,6 +18,14 @@ export class UserService {
       );
   }
 
+  getUser(id: number): Observable<any> {
+    const url = `${this.userUrl}/${id}`;
+    return this.httpClient.get(url)
+        .pipe(
+            catchError(this.handleError<User>(`getUser id=${id}`))
+        );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

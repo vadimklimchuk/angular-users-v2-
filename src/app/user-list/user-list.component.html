@@ -1,5 +1,5 @@
 <div class="content">
   <a *ngFor = "let user of users" 
   class="user-link"
-  >{{user.name}}</a>
+  [routerLink]="[{ outlets: { popup: ['compose', user.id] } }]">{{user.name}}</a>
 </div>
