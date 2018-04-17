@@ -12,9 +12,11 @@ import { UserService } from '../user.service';
 export class UserListComponent implements OnInit {
   users: Array<User>;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+              private router: Router) { }
 
   ngOnInit() {
+    this.getLocalStorage();
     this.getUsers();
   }
 
@@ -22,5 +24,12 @@ export class UserListComponent implements OnInit {
     this.userService.getUsers().subscribe(users => {
       this.users = users;
     });
+  }
+
+  getLocalStorage() {
+    if (localStorage.userId !== null && !isNaN(localStorage.userId)) {
+      const userId = localStorage.getItem('userId');
+      this.router.navigate([{ outlets: { popup: ['compose', userId] } }]);
+    }
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import 'rxjs/add/operator/switchMap';
 
 import { User } from '../user.model';
 import { UserService } from '../user.service';
@@ -25,11 +26,11 @@ export class UserDetailComponent implements OnInit {
     this.userService.getUser(id)
       .subscribe(user => this.user = user);
 
-    localStorage.setItem('url', id + '');
+    localStorage.setItem('userId', id + '');
   }
 
   cancel() {
     this.router.navigate([{ outlets: { popup: null }}]);
-    localStorage.setItem('url', null);
+    localStorage.setItem('userId', null);
   }
 }
