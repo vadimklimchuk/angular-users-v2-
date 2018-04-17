@@ -1,0 +1,42 @@
+.content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.user-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 170px;
+    padding: 5px;
+    width: 15%;
+    margin: 20px;
+    margin-top: 80px;
+    text-align: center;
+    text-decoration: none;
+    height: 150px;
+    background: #10c1a8;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: beige;
+    font-weight: bold;
+    transition: all 0.25s;
+    box-shadow: 0px 0px 7px #10c1a8;
+}
+
+.user-link:hover {
+    background: #01fcda;
+    color: brown;
+    transform: rotateZ(5deg);
+    box-shadow: 0px 0px 7px #01fcda;
+}
+
+
+
+@media only screen and (max-width: 420px) {
+    .user-link {
+        width: 80%;
+    }
+}
