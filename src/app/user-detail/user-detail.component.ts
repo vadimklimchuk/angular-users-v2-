@@ -11,6 +11,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
+  users: Array<User>;
   user: User;
 
   constructor(private route: ActivatedRoute,
@@ -26,7 +27,7 @@ export class UserDetailComponent implements OnInit {
     this.userService.getUser(id)
       .subscribe(user => this.user = user);
 
-    localStorage.setItem('userId', id + '');
+    localStorage.setItem('userId', id + ''); //  add in localStorage ID of SelectedUser
   }
 
   cancel() {
