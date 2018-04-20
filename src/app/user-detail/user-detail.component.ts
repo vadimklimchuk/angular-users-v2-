@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
-import { User } from '../user.model';
+import { User } from '../user';
 import { UserService } from '../user.service';
 
 @Component({
@@ -11,8 +11,8 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
-  users: Array<User>;
-  user: User;
+  private users: Array<User>;
+  private user: User;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -30,7 +30,7 @@ export class UserDetailComponent implements OnInit {
     localStorage.setItem('userId', id + ''); //  add in localStorage ID of SelectedUser
   }
 
-  cancel() {
+  cancel(): void {
     this.router.navigate([{ outlets: { popup: null }}]);
     localStorage.setItem('userId', null);
   }

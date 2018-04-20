@@ -9,7 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserService } from './user.service';
 import { UserDetailComponent } from './user-detail/user-detail.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -25,7 +25,9 @@ import { AppRoutingModule } from './/app-routing.module';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [UserService],
+  providers: [
+    UserService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
